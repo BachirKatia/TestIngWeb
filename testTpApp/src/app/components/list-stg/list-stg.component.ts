@@ -44,7 +44,7 @@ export class ListStgComponent implements OnInit {
 
   deleteAllStg() {
     this.stgList = [];
-    this.showList();
+
   }
 
 
@@ -57,13 +57,14 @@ export class ListStgComponent implements OnInit {
     this.stagiaireCrudService.deleteStg(id).subscribe({
         next : data => {
         console.log('The response:', data);
+          this.showList();
 
       },
       error : err => {
         console.log(err);
       }
     });
-    this.showList();
+
 
   }
 }
